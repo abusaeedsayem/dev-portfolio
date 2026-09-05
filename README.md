@@ -1,7 +1,7 @@
 # Abu Saeed Mohammad Sayem — Developer Portfolio
 
 [![GitHub Repository](https://img.shields.io/badge/GitHub-dev--portfolio-6366f1?style=for-the-badge&logo=github)](https://github.com/abusaeedsayem/dev-portfolio)
-[![Version](https://img.shields.io/badge/version-1.0.0-22d3ee?style=for-the-badge)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.1.0-22d3ee?style=for-the-badge)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-a855f7?style=for-the-badge)](LICENSE)
 
 A modern, high-performance personal developer portfolio website designed for **Abu Saeed Mohammad Sayem**, showcasing expertise in **Vibe Coding with Google Antigravity**, **WordPress Plugin Development**, **Desktop Software Engineering**, and **Google Chrome Extensions**.
@@ -12,9 +12,12 @@ A modern, high-performance personal developer portfolio website designed for **A
 
 - **Aesthetic**: Dark-first palette (`#0a0e1a`) with electric indigo (`#6366f1`), cyan (`#22d3ee`), and purple (`#a855f7`) gradients, frosted glass cards, and glow effects.
 - **Interactive Canvas Particles**: Custom particle mesh background for the hero section responding dynamically to mouse movement.
+- **Dynamic Hero Badges (NEW)**: 5 tech words (`Antigravity`/`WordPress`/`Desktop`/`Chrome`/`AI`) now float with sine-wave drift and are fully draggable anywhere in the hero via Pointer Events (`js/floatingBadges.js`) — GPU `translate3d`, bounce, inertia, and `prefers-reduced-motion` safe.
+- **Branded Project Showcase (NEW)**: Premium `220px` headers with real brand assets (`Smart Affiliate Link Cloaker icon.svg`, `VibePress Studio logo.svg`, `ShelfMaster icon-1024.png`) + radial glow + shine sweep + `scale 1.05` hover; SVGs inlined, PNG hashed for optimal load.
 - **Dynamic Typewriter**: Smoothly cycles through builder specializations and roles.
-- **Animated Skill Bars & Counters**: Triggered accurately on scroll via `IntersectionObserver`.
+- **Animated Skill Bars & Counters**: Triggered accurately on scroll via `IntersectionObserver` — now with `Java 93%` (was `C#`), `Stitch 70%`, `Pomelli 88%` and proficiency-reordered Languages.
 - **Filterable Showcase**: Instant category filtering for WordPress Plugins, Chrome Extensions, Desktop Apps, Web Apps, and AI Projects.
+- **Premium Contact System (NEW)**: Glass form card + circular `Share-2` Connect icon (fixes duplicate LinkedIn confusion) + honeypot spam guard + automatic server delivery to `abusaeedsayem@proton.me` via `FormSubmit Ajax` (no desktop `mailto:`), with thank-you toast `Message has been sent and thanks for using our communication system`; note updates to `48 business hours (72h weekend)`.
 - **Theme Switching**: Dark / Light theme toggle with `localStorage` persistence.
 - **Accessible & Responsive**: Keyboard-navigable, mobile-friendly navigation drawer, and support for `prefers-reduced-motion`.
 - **Zero Heavy Frameworks**: 100% vanilla HTML5, modern modular CSS3, and lightweight ES6+ JavaScript.
@@ -31,7 +34,11 @@ dev-portfolio/
 ├── package.json            # Vite build & dev server configuration
 ├── .gitignore              # Ignored files (node_modules, dist)
 ├── assets/
-│   └── favicon.svg         # Gradient code bracket favicon
+│   ├── favicon.svg                         # Gradient code bracket favicon
+│   ├── Smart Affiliate Link Cloaker icon.svg # Link-Shield plugin icon (100×100)
+│   ├── VibePress Studio logo.svg           # Studio wordmark (450×100)
+│   ├── VibePress Studio logo-dark.svg      # Alternate dark variant
+│   └── ShelfMaster icon-1024.png           # ShelfMaster app icon (1024×1024)
 ├── css/
 │   ├── variables.css       # Theme tokens, typography, and spacing scales
 │   ├── base.css            # Reset, typography, and container layout
@@ -40,9 +47,10 @@ dev-portfolio/
 │   └── animations.css      # Keyframes, hover glows, and scroll transitions
 └── js/
     ├── particles.js        # Canvas particle background system
+    ├── floatingBadges.js   # Draggable floating tech badges (hero physics)
     ├── typewriter.js       # Dynamic role typewriter effect
     ├── animations.js       # IntersectionObserver scroll-triggers
-    └── main.js             # Nav, theme toggle, project filter, and contact
+    └── main.js             # Nav, theme toggle, project filter, and contact form (FormSubmit → Proton)
 ```
 
 ---
@@ -116,4 +124,4 @@ For a complete record of updates and version history, see [CHANGELOG.md](CHANGEL
 - Location: Schenectady, NY, USA
 - LinkedIn: [@abusaeedsayem](https://www.linkedin.com/in/abusaeedsayem)
 - GitHub: [@abusaeedsayem](https://github.com/abusaeedsayem)
-- Email: asaeedmsayem@gmail.com
+- Email: abusaeedsayem@proton.me

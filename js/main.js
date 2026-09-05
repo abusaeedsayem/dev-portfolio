@@ -148,36 +148,117 @@
       });
     }
 
-    // Contact Form
+    // Contact Form — Automatic Server Delivery to abusaeedsayem@proton.me (no desktop mail app)
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-      contactForm.addEventListener('submit', (e) => {
+      // ✅ Live endpoint via FormSubmit Ajax — no account needed, delivers directly to Proton via their servers
+      // FormSubmit activates on first submit: you will receive a confirmation email at abusaeedsayem@proton.me — click "Activate" once, then all future messages arrive automatically.
+      const FORMSPREE_ENDPOINT = 'https://formsubmit.co/ajax/abusaeedsayem@proton.me';
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+      function showToast(message, type = 'success') {
+        let toast = document.querySelector('.toast');
+        if (!toast) {
+          toast = document.createElement('div');
+          toast.className = 'toast';
+          toast.id = 'toast';
+          toast.setAttribute('role', 'alert');
+          toast.setAttribute('aria-live', 'polite');
+          document.body.appendChild(toast);
+        }
+        toast.textContent = message;
+        toast.className = `toast show ${type}`;
+        clearTimeout(toast._hideTimer);
+        toast._hideTimer = setTimeout(() => {
+          toast.classList.remove('show', 'success', 'error');
+        }, 5000);
+      }
+
+      function setFieldError(el, hasError) {
+        if (!el) return;
+        if (hasError) el.classList.add('field-error');
+        else el.classList.remove('field-error');
+      }
+
+      function clearFieldErrors() {
+        contactForm.querySelectorAll('.field-error').forEach((el) => el.classList.remove('field-error'));
+      }
+
+      // Live clear error on input
+      contactForm.querySelectorAll('input, textarea').forEach((el) => {
+        el.addEventListener('input', () => el.classList.remove('field-error'));
+      });
+
+      contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
-        const name = contactForm.querySelector('input[name="name"]');
-        const email = contactForm.querySelector('input[name="email"]');
-        const message = contactForm.querySelector('textarea[name="message"]');
-        
-        if (!name || !email || !message) return;
-        
+        clearFieldErrors();
+
+        // Honeypot — bots fill hidden field
+        const honey = contactForm.querySelector('input[name="_gotcha"]');
+        if (honey && honey.value.trim() !== '') return;
+
+        const nameEl = contactForm.querySelector('input[name="name"]');
+        const emailEl = contactForm.querySelector('input[name="email"]');
+        const subjectEl = contactForm.querySelector('input[name="subject"]');
+        const messageEl = contactForm.querySelector('textarea[name="message"]');
+
+        if (!nameEl || !emailEl || !messageEl) return;
+
+        const name = nameEl.value.trim();
+        const email = emailEl.value.trim();
+        const subject = subjectEl ? subjectEl.value.trim() : '';
+        const message = messageEl.value.trim();
+
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        
-        if (name.value.trim() !== '' && emailRegex.test(email.value) && message.value.trim() !== '') {
-          // Show toast notification
-          let toast = document.querySelector('.toast');
-          if (!toast) {
-            toast = document.createElement('div');
-            toast.className = 'toast';
-            toast.textContent = 'Message sent successfully!';
-            document.body.appendChild(toast);
+        let hasError = false;
+
+        if (name === '') { setFieldError(nameEl, true); hasError = true; }
+        if (!emailRegex.test(email)) { setFieldError(emailEl, true); hasError = true; }
+        if (message === '') { setFieldError(messageEl, true); hasError = true; }
+
+        if (hasError) {
+          showToast('Please fill name, valid email, and message.', 'error');
+          return;
+        }
+
+        const originalBtnText = submitBtn ? submitBtn.textContent : '';
+
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sending...';
+        }
+
+        try {
+          const formData = new FormData();
+          formData.append('name', name);
+          formData.append('email', email);
+          formData.append('subject', subject ? `[Portfolio] ${subject} from ${name}` : `[Portfolio] New message from ${name}`);
+          formData.append('message', message);
+          formData.append('_captcha', 'false');
+          formData.append('_template', 'table');
+
+          const res = await fetch(FORMSPREE_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: formData,
+          });
+
+          const data = await res.json().catch(() => ({}));
+
+          if (res.ok) {
+            showToast('Message has been sent and thanks for using our communication system. ✨', 'success');
+            contactForm.reset();
+          } else {
+            const msg = data.message || 'Delivery failed — please try again.';
+            showToast(msg, 'error');
           }
-          
-          toast.classList.add('show');
-          contactForm.reset();
-          
-          setTimeout(() => {
-            toast.classList.remove('show');
-          }, 4000);
+        } catch (err) {
+          showToast('Unable to send — please try again or email abusaeedsayem@proton.me directly.', 'error');
+        } finally {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+          }
         }
       });
     }

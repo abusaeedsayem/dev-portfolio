@@ -416,3 +416,19 @@
   opacity: 1;
   visibility: visible;
 }
+
+.toast.error {
+  border-color: #ef4444;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.25);
+}
+
+.toast.success {
+  border-color: var(--accent-primary);
+}
+
+.btn-primary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
