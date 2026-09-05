@@ -1,7 +1,7 @@
 # Abu Saeed Mohammad Sayem — Developer Portfolio
 
 [![GitHub Repository](https://img.shields.io/badge/GitHub-dev--portfolio-6366f1?style=for-the-badge&logo=github)](https://github.com/abusaeedsayem/dev-portfolio)
-[![Version](https://img.shields.io/badge/version-1.1.0-22d3ee?style=for-the-badge)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.2.0-22d3ee?style=for-the-badge)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-a855f7?style=for-the-badge)](LICENSE)
 
 A modern, high-performance personal developer portfolio website designed for **Abu Saeed Mohammad Sayem**, showcasing expertise in **Vibe Coding with Google Antigravity**, **WordPress Plugin Development**, **Desktop Software Engineering**, and **Google Chrome Extensions**.
@@ -12,12 +12,13 @@ A modern, high-performance personal developer portfolio website designed for **A
 
 - **Aesthetic**: Dark-first palette (`#0a0e1a`) with electric indigo (`#6366f1`), cyan (`#22d3ee`), and purple (`#a855f7`) gradients, frosted glass cards, and glow effects.
 - **Interactive Canvas Particles**: Custom particle mesh background for the hero section responding dynamically to mouse movement.
-- **Dynamic Hero Badges (NEW)**: 5 tech words (`Antigravity`/`WordPress`/`Desktop`/`Chrome`/`AI`) now float with sine-wave drift and are fully draggable anywhere in the hero via Pointer Events (`js/floatingBadges.js`) — GPU `translate3d`, bounce, inertia, and `prefers-reduced-motion` safe.
-- **Branded Project Showcase (NEW)**: Premium `220px` headers with real brand assets (`Smart Affiliate Link Cloaker icon.svg`, `VibePress Studio logo.svg`, `ShelfMaster icon-1024.png`) + radial glow + shine sweep + `scale 1.05` hover; SVGs inlined, PNG hashed for optimal load.
+- **Dynamic Hero Badges (NEW in 1.1.0)**: 5 tech words (`Antigravity`/`WordPress`/`Desktop`/`Chrome`/`AI`) now float with sine-wave drift and are fully draggable anywhere in the hero via Pointer Events (`js/floatingBadges.js`) — GPU `translate3d`, bounce, inertia, and `prefers-reduced-motion` safe.
+- **Branded Project Showcase (NEW in 1.1.0)**: Premium `220px` headers with real brand assets (`Smart Affiliate Link Cloaker icon.svg`, `VibePress Studio logo.svg`, `ShelfMaster icon-1024.png`) + radial glow + shine sweep + `scale 1.05` hover; SVGs inlined, PNG hashed for optimal load.
+- **Premium Experience & Education (NEW in 1.2.0)**: Rebuilt from LinkedIn PDF `assets/Updated Profile.pdf` — premium split grid `Work 1.65fr + Education 0.95fr sticky`, `9+ years` filtered IT total (Freelance/Development/Computer roles incl. NYDTC Senior Instructor 6y8m), 5 IT roles with `Jul 2026 – Present · 3 mos` date style + collapsible `Other Experience (Non-IT Operations)` for USPS/Plug Power, glass cards with `Share-2` etc.
 - **Dynamic Typewriter**: Smoothly cycles through builder specializations and roles.
-- **Animated Skill Bars & Counters**: Triggered accurately on scroll via `IntersectionObserver` — now with `Java 93%` (was `C#`), `Stitch 70%`, `Pomelli 88%` and proficiency-reordered Languages.
+- **Animated Skill Bars & Counters**: Triggered accurately on scroll via `IntersectionObserver` — now with `Java 93%` (was `C#`), `Stitch 70%`, `Pomelli 88%` and proficiency-reordered Languages; `Years Experience` synced to filtered `9+`.
 - **Filterable Showcase**: Instant category filtering for WordPress Plugins, Chrome Extensions, Desktop Apps, Web Apps, and AI Projects.
-- **Premium Contact System (NEW)**: Glass form card + circular `Share-2` Connect icon (fixes duplicate LinkedIn confusion) + honeypot spam guard + automatic server delivery to `abusaeedsayem@proton.me` via `FormSubmit Ajax` (no desktop `mailto:`), with thank-you toast `Message has been sent and thanks for using our communication system`; note updates to `48 business hours (72h weekend)`.
+- **Premium Contact System (NEW in 1.1.0)**: Glass form card + circular `Share-2` Connect icon (fixes duplicate LinkedIn confusion) + honeypot spam guard + automatic server delivery to `abusaeedsayem@proton.me` via `FormSubmit Ajax` (no desktop `mailto:`), with thank-you toast `Message has been sent and thanks for using our communication system`; note updates to `48 business hours (72h weekend)`.
 - **Theme Switching**: Dark / Light theme toggle with `localStorage` persistence.
 - **Accessible & Responsive**: Keyboard-navigable, mobile-friendly navigation drawer, and support for `prefers-reduced-motion`.
 - **Zero Heavy Frameworks**: 100% vanilla HTML5, modern modular CSS3, and lightweight ES6+ JavaScript.

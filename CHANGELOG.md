@@ -6,6 +6,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [1.2.0] - 2026-09-05
+
+### Changed
+- **Experience & Education — Premium Split Redesign (LinkedIn Source: `assets/Updated Profile.pdf`):** Replaced single `max-width 800px` timeline (`index.html:507-574`, `css/sections.css:898-972`) with `experience-grid` `1fr` → `1.65fr 0.95fr @992` (`sections.css:905-972`) — **Work (left)** `timeline--premium` + **Education (right sticky)** `edu-column` `position:sticky top:96px`. Section now has dual radial overlay `rgba99,102,241,0.08` + `168,85,247,0.07`, `subsection-title` with `subsection-dot/count` pills.
+- **Work Experience — Information Sync from LinkedIn PDF (5 IT roles, 9+ years):**
+  - `Freelance Developer` · `Self Employed` · `United States` · `Jul 2026 – Present · 3 mos` · Present — production-grade privacy-first software; highlights: *VibePress Studio Hub (Live)* Next.js 16/TS/Tailwind v4/shadcn/ui 17 pages WCAG AAA, *Smart Affiliate Link Cloaker* 24-feature WordPress plugin (cloaking/geo/A-B/GA analytics/Stripe), *ShelfMaster* Tauri 2.0/Rust/React/SQLite 9 modules (`index.html:517-548`).
+  - `Self-Employed Blogger & Writer` · `Schenectady, NY` · `Jun 2024 – Present · 2 yrs 4 mos` · bilingual English & Bengali publishing across PassiveWriting/Medium/Facebook/Wattpad + SEO (`index.html:550-572`).
+  - `Freelance Web Developer` · `United States` · `Apr 2009 – Mar 2011 · 2 yrs` · WordPress themes for cleaning/affiliate/technical/language schools, plugin/menus/widgets, responsive SEO (`index.html:574-593`) — **newly surfaced from PDF (was missing in cache)**.
+  - `Quality Assurance Engineer` · `CLEER Security, LLC` · `Miami, FL` · `Feb 2022 – Apr 2022 · 3 mos` · web app testing, bug tracking, organized records (`index.html:595-612`).
+  - `Senior Training Instructor` · `NYDTC` · `Rajshahi, Bangladesh` · `Aug 2002 – Mar 2009 · 6 yrs 8 mos` · taught Microsoft Office & computing fundamentals, prepared course materials & attendance (`index.html:614-631`) — **included per Filter scope confirmation** (Computer/IT).
+  - Timeline cards premium: `glass-bg blur20` + hover `translateY -2` + `border accent 22%` + `glow`, `timeline-header` flex with `timeline-duration` mono pill `bg-tertiary`, `timeline-highlights` ✦ list, `timeline-chips` chips row, `dot--current` pulsing green `pulseGreenDot 2s` for current role.
+- **Other Experience (Non-IT Operations) — Collapsible:** Moved 3 non-IT roles to `<details class="other-experience">` (`index.html:633-664`, `css: other-experience` dashed `glass-bg`, `summary-chevron` rotate): `PSE Mail Processing Clerk` `Sep 2022–Jul 2024 · 1 yr 11 mos` `USPS Albany`, `Mail Handler Assistant` `Aug–Sep 2022 · 2 mos` `USPS`, `Production Technician` `Mar 2021–Jan 2022 · 11 mos` `Plug Power Latham` — hidden by default, preserves history without diluting dev narrative.
+- **Education — Sticky Premium:** `edu-column` `edu-stack` `edu-card` flex `glass-bg` + `edu-icon` 44px circle `bg accent 12%`, `MBA Finance` `Asian University Bangladesh Apr 2007–Mar 2009` + `International Diploma Computer Studies NCC UK Jan 2000–Feb 2002` (`index.html:666-706`); added `edu-note` `rgba99,102,241,0.07` explaining *9+ Years IT Experience incl. Senior Training Instructor Aug 2002–Mar 2009*.
+- **Date Style:** `Jun 2024 – Present · 2 yrs 4 mos` per recommendation (short month, en-dash, `·`, abbreviated years/months) applied consistently to all 8 durations (including `Jul 2026 – Present · 3 mos`, `Apr 2009 – Mar 2011 · 2 yrs`, etc.).
+- **About Stats Sync:** `Years Experience` counter `index.html:110` `data-target="5"→"9"` to reflect filtered IT total **9** (6y8m NYDTC + 2y Freelance Web Dev + 3m QA + 2y4m Blogger = 11y3m distinct, displayed as **9+** per your `B) 9` selection). Other stats `Projects Built 20+ / Technologies 10+ / Specializations 4+` left unchanged.
+
+### Technical
+- `css/sections.css` premium block expanded `895-1130` (+~180 lines) with `experience-grid`, `subsection-*`, `timeline--premium`, `other-experience`, `edu-*`, `prefers-reduced-motion` guard. `Vite build` green: `dist/index.html 52.61k gz11.39`, `index-*.css 39.04k gz7.07` (was 33.93k), `js` unchanged `14.70k`. `node --check` OK.
+
+---
+
 ## [1.1.0] - 2026-09-05
 
 ### Changed
