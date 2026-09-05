@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [1.3.0] - 2026-09-05
+
+### Changed
+- **Experience & Education — Non-Timeline Premium Redesign:** Replaced previous **timeline style** (`timeline timeline--premium` with vertical gradient line `css/sections.css:966-981`, `timeline-dot` `12px` + `pulseGreenDot`, `timeline-item` left padding) with premium **non-timeline** layout — **Hero + Bento + Info-Stack** (`index.html:507-699`, `css/sections.css:895-1058`).
+  - **Hero Featured Card** `experience-hero` (`index.html:514-540`): Glass `blur20` `border` `radius-lg` `padding-xl` + top `4px` accent bar `linear 90deg primary→tertiary→secondary`, `experience-hero-top` flex badge `Current` `pulsing-dot` + duration `Jul 2026 – Present · 3 mos`, 3 highlights (VibePress, Cloaker, ShelfMaster) + chips `Next.js/TypeScript/Tauri/WordPress/Vercel`, hover `translateY -3px` + `shadow 14px 36px + glow`.
+  - **Bento Grid** `experience-bento` (`index.html:542-575`): `1fr → 2 cols @768` `gap lg` of `feature-card experience-bento-card` — `✍️ Blogger` `Jun 2024 2y4m` + `🌐 Freelance Web Dev` `Apr 2009 2y` each with `bento-icon` `44px circle rgba99,102,241 0.12`, badge/duration/title/meta/desc + condensed highlights + chips. Reuses `feature-card` premium (`components.css:feature-card`).
+  - **Info Stack** `info-stack` (`index.html:577-607`): Vertical flex `gap lg` of `info-card` horizontal (`info-icon 44px circle` + `info-body` flex) — `QA Engineer` `Feb–Apr 2022 3m` + `Senior Instructor NYDTC` `Aug 2002–Mar 2009 6y8m`; retains `timeline-header/badge/duration/highlights` but without timeline line. Non-IT collapsible `details.other-experience` kept as `info-card--muted` dashed glass (`index.html:609-664`).
+  - **Education Sticky** `edu-column` `647` unchanged (2 degrees + note `9+ Years`). Overall `experience-grid` `1fr → 1.65fr/0.95fr @992` with dual radial overlay intact.
+  - **Styling:** Removed `timeline`, `timeline::before`, `timeline-dot`, `dot--current/muted`, `@keyframes pulseGreenDot` from `css/sections.css`; added `featured-column`, `experience-hero`, `experience-hero-accent/top`, `experience-bento`, `bento-icon`, `info-stack`, `info-body`, `info-card--muted` (+ `info-icon--muted`) — all `glass` + `prefers-reduced-motion` safe.
+  - Content preserved: Same 5 IT roles (Freelance Developer, Blogger, Freelance Web Dev, QA, Senior Instructor), same collapsible non-IT 3 roles, same 2 degrees, same `9+ years` filtered total and `Jun 2024 – Present · 2 yrs 4 mos` date style; purely visual architecture change from vertical timeline to modular card system.
+
+### Technical
+- `css/sections.css` net `+~30` lines (removed `~60` timeline lines, added `~90` hero/bento/stack). `Vite build` green: `dist/index.html 50.65k gz11.12`, `index-*.css 39.32k gz7.12`, `js 14.70k`; `grep timeline::before 0` in built CSS, `grep timeline-item dist 0` vs `3` before, `experience-hero/bento` present.
+
+---
+
 ## [1.2.0] - 2026-09-05
 
 ### Changed
