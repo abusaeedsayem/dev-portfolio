@@ -4,6 +4,26 @@ All notable changes to the **Abu Saeed Mohammad Sayem Developer Portfolio** proj
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.1] - 2026-09-06
+
+### Fixed & Enhanced
+- **Experience & Education — Complete Responsive Redesign**:
+  - **Eliminated Mobile Overflow & Text Clipping**: Replaced rigid `overflow: hidden` on `.experience-section` with `overflow-x: clip`, preventing cutoffs of cards and text behind hidden boundaries on mobile devices.
+  - **Fluid Grid & Container Sizing**: Upgraded `.experience-grid` to `grid-template-columns: minmax(0, 1fr)` at mobile/tablet viewports to completely eliminate CSS Grid blowout; cleanly transitions to `minmax(0, 1.62fr) minmax(0, 0.98fr)` at `≥992px`. Added explicit `min-width: 0; width: 100%; box-sizing: border-box;` across `.featured-column`, `.edu-column`, and all individual card containers.
+  - **Mobile-First Spacing & Responsive Padding**:
+    - `.experience-hero`: Scaled from fixed 32px down to `1.25rem 1.1rem` on phones (<768px) and `1.1rem 0.9rem` on narrow screens (<420px).
+    - `.experience-bento-card`: Optimized padding to `1.15rem 1rem` on mobile.
+    - `.info-card` & `.edu-card`: Scaled padding to `1.1rem 0.95rem` (<560px) and `0.95rem 0.8rem` (<380px), with responsive icon scaling from 42px down to 36px and 32px.
+    - `.other-experience-content`: Reduced nested padding from 24px down to `var(--space-md)` (16px) and `10px` on small devices, preventing cumulative horizontal compression inside collapsible sections.
+  - **Fluid Headers & Text Wrapping**:
+    - Introduced `.bento-header` and `.bento-header-meta` in `index.html` so that icons, badges, and duration pills align as a cohesive, responsive row instead of stacking loosely.
+    - Added structured `.timeline-header` to Education cards (`MBA in Finance` and `International Diploma in Computer Studies`) with badge and duration tags neatly separated from university metadata.
+    - Enabled flexible multi-line wrapping with `overflow-wrap: break-word` and `word-break: normal` across titles, company metadata, duration badges, and highlight bullet points.
+
+### Technical
+- Updated `package.json` version to `1.3.1`.
+- Built production bundle with Vite: `dist/index.html 51.21 kB`, `index-*.css 42.92 kB`, `index-*.js 14.70 kB` (clean compile in 153ms).
+
 ---
 
 ## [1.3.0] - 2026-09-05

@@ -1,7 +1,7 @@
 # Abu Saeed Mohammad Sayem — Developer Portfolio
 
 [![GitHub Repository](https://img.shields.io/badge/GitHub-dev--portfolio-6366f1?style=for-the-badge&logo=github)](https://github.com/abusaeedsayem/dev-portfolio)
-[![Version](https://img.shields.io/badge/version-1.3.0-22d3ee?style=for-the-badge)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.3.1-22d3ee?style=for-the-badge)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-a855f7?style=for-the-badge)](LICENSE)
 
 A modern, high-performance personal developer portfolio website designed for **Abu Saeed Mohammad Sayem**, showcasing expertise in **Vibe Coding with Google Antigravity**, **WordPress Plugin Development**, **Desktop Software Engineering**, and **Google Chrome Extensions**.
@@ -14,7 +14,7 @@ A modern, high-performance personal developer portfolio website designed for **A
 - **Interactive Canvas Particles**: Custom particle mesh background for the hero section responding dynamically to mouse movement.
 - **Dynamic Hero Badges (NEW in 1.1.0)**: 5 tech words (`Antigravity`/`WordPress`/`Desktop`/`Chrome`/`AI`) now float with sine-wave drift and are fully draggable anywhere in the hero via Pointer Events (`js/floatingBadges.js`) — GPU `translate3d`, bounce, inertia, and `prefers-reduced-motion` safe.
 - **Branded Project Showcase (NEW in 1.1.0)**: Premium `220px` headers with real brand assets (`Smart Affiliate Link Cloaker icon.svg`, `VibePress Studio logo.svg`, `ShelfMaster icon-1024.png`) + radial glow + shine sweep + `scale 1.05` hover; SVGs inlined, PNG hashed for optimal load.
-- **Premium Experience & Education (NEW in 1.3.0 — Non-Timeline)**: Rebuilt from LinkedIn PDF `assets/Updated Profile.pdf` — **no timeline line/dots**, premium modular system: **Hero featured card** (Freelance Developer Jul 2026) + **Bento 2-col** (Blogger + Freelance Web Dev) + **Info-Stack** (QA + Senior Instructor) + sticky Education 2 degrees, `9+ years` filtered IT total, collapsible `Other Experience (Non-IT)` for USPS/Plug Power, all glass `blur20` with accent bar + hover lift.
+- **Completely Responsive Experience & Education (NEW in 1.3.1)**: Rebuilt from LinkedIn profile with a non-timeline modular card system (**Hero featured card** + **Bento 2-col** + **Info-Stack** + sticky Education + collapsible Non-IT), fully responsive across all screen sizes (320px–430px mobile, tablets, desktops) with fluid `minmax(0, 1fr)` grid sizing, mobile-first adaptive card paddings, fluid `.bento-header` and `.timeline-header` wrapping, and zero horizontal clipping.
 - **Dynamic Typewriter**: Smoothly cycles through builder specializations and roles.
 - **Animated Skill Bars & Counters**: Triggered accurately on scroll via `IntersectionObserver` — now with `Java 93%` (was `C#`), `Stitch 70%`, `Pomelli 88%` and proficiency-reordered Languages; `Years Experience` synced to filtered `9+`.
 - **Filterable Showcase**: Instant category filtering for WordPress Plugins, Chrome Extensions, Desktop Apps, Web Apps, and AI Projects.
