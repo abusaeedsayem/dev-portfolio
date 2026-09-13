@@ -4,6 +4,21 @@ All notable changes to the **Abu Saeed Mohammad Sayem Developer Portfolio** proj
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.2] - 2026-09-13
+
+### Changed & Updated
+- **WordPress Plugin Rebranding (Smart Affiliate Link Cloaker → VibePress Affiliate Link Cloaker)**:
+  - **Asset Rename & SVG Metadata**: Renamed plugin brand icon from `assets/Smart Affiliate Link Cloaker icon.svg` to `assets/VibePress Affiliate Link Cloaker icon.svg` and updated SVG internal title to `VibePress Affiliate Link Cloaker — Link-Shield`.
+  - **Project Showcase Card**: Updated Project 1 title to `VibePress Affiliate Link Cloaker`, synchronized product URL link to `https://vibepressstudio.vercel.app/products/vibepress-affiliate-link-cloaker`, updated logo `src` and accessible `alt` / `aria-label` attributes.
+  - **Experience Section Sync**: Updated the featured work experience highlights to reference `VibePress Affiliate Link Cloaker`.
+  - **Documentation & Structure**: Fully integrated updated naming across `README.md`, `CHANGELOG.md`, and project asset references.
+
+### Technical
+- Updated `package.json` version to `1.3.2`.
+- Verified Vite production build (`dist/` generated cleanly with updated asset bindings).
+
+---
+
 ## [1.3.1] - 2026-09-06
 
 ### Fixed & Enhanced
@@ -47,7 +62,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Changed
 - **Experience & Education — Premium Split Redesign (LinkedIn Source: `assets/Updated Profile.pdf`):** Replaced single `max-width 800px` timeline (`index.html:507-574`, `css/sections.css:898-972`) with `experience-grid` `1fr` → `1.65fr 0.95fr @992` (`sections.css:905-972`) — **Work (left)** `timeline--premium` + **Education (right sticky)** `edu-column` `position:sticky top:96px`. Section now has dual radial overlay `rgba99,102,241,0.08` + `168,85,247,0.07`, `subsection-title` with `subsection-dot/count` pills.
 - **Work Experience — Information Sync from LinkedIn PDF (5 IT roles, 9+ years):**
-  - `Freelance Developer` · `Self Employed` · `United States` · `Jul 2026 – Present · 3 mos` · Present — production-grade privacy-first software; highlights: *VibePress Studio Hub (Live)* Next.js 16/TS/Tailwind v4/shadcn/ui 17 pages WCAG AAA, *Smart Affiliate Link Cloaker* 24-feature WordPress plugin (cloaking/geo/A-B/GA analytics/Stripe), *ShelfMaster* Tauri 2.0/Rust/React/SQLite 9 modules (`index.html:517-548`).
+  - `Freelance Developer` · `Self Employed` · `United States` · `Jul 2026 – Present · 3 mos` · Present — production-grade privacy-first software; highlights: *VibePress Studio Hub (Live)* Next.js 16/TS/Tailwind v4/shadcn/ui 17 pages WCAG AAA, *VibePress Affiliate Link Cloaker* 24-feature WordPress plugin (cloaking/geo/A-B/GA analytics/Stripe), *ShelfMaster* Tauri 2.0/Rust/React/SQLite 9 modules (`index.html:517-548`).
   - `Self-Employed Blogger & Writer` · `Schenectady, NY` · `Jun 2024 – Present · 2 yrs 4 mos` · bilingual English & Bengali publishing across PassiveWriting/Medium/Facebook/Wattpad + SEO (`index.html:550-572`).
   - `Freelance Web Developer` · `United States` · `Apr 2009 – Mar 2011 · 2 yrs` · WordPress themes for cleaning/affiliate/technical/language schools, plugin/menus/widgets, responsive SEO (`index.html:574-593`) — **newly surfaced from PDF (was missing in cache)**.
   - `Quality Assurance Engineer` · `CLEER Security, LLC` · `Miami, FL` · `Feb 2022 – Apr 2022 · 3 mos` · web app testing, bug tracking, organized records (`index.html:595-612`).
@@ -73,14 +88,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - **Skills — Languages**: `C# 75%` → `Java 93%` (`index.html:177-180`) and reordered by proficiency: `HTML5 & CSS3 95%` → `Java 93%` → `JavaScript 92%` → `PHP 88%` → `TypeScript 85%` → `Python 80%` (`index.html:165-211`).
 - **Skills — Frontend**: Added `Stitch 70%` as 4th item appended after `WordPress Theme Dev` (`index.html:237-243`).
 - **Skills — AI & Vibe Coding**: Added `Muse 88%` then renamed to `Pomelli 88%` as 5th item (`index.html:346-352`), preserving `88%`/`data-level 88`.
-- **Projects — Premium Branding & Banding**: Replaced emoji headers with real assets: `Smart Affiliate Link Cloaker` → `assets/Smart Affiliate Link Cloaker icon.svg` (76×76), `VibePress Studio` → `assets/VibePress Studio logo.svg` (220×49 wide), `ShelfMaster` → `assets/ShelfMaster icon-1024.png` (84×84 square). Added premature `assets/VibePress Studio logo-dark.svg` for future dark variant. Restructured `project-header` `180→220px` (195px mobile), `isolation:isolate` + radial highlights `::before` + shine sweep `::after` (`left -75%→128%`), `project-logo-wrap` grid, `project-logo--square` 82×82 / `elevated` 88×88 white pill + `box-shadow`, `project-logo--wide` 232px white pill. Card hover `translateY -6px` + `scale 1.05` on logo, `prefers-reduced-motion` safe. Assets handled by Vite (SVGs inlined as `data:image/svg+xml`, PNG hashed `dist/assets/ShelfMaster icon-1024-CX0M8jc0.png 49.68kB`).
+- **Projects — Premium Branding & Banding**: Replaced emoji headers with real assets: `VibePress Affiliate Link Cloaker` → `assets/VibePress Affiliate Link Cloaker icon.svg` (76×76), `VibePress Studio` → `assets/VibePress Studio logo.svg` (220×49 wide), `ShelfMaster` → `assets/ShelfMaster icon-1024.png` (84×84 square). Added premature `assets/VibePress Studio logo-dark.svg` for future dark variant. Restructured `project-header` `180→220px` (195px mobile), `isolation:isolate` + radial highlights `::before` + shine sweep `::after` (`left -75%→128%`), `project-logo-wrap` grid, `project-logo--square` 82×82 / `elevated` 88×88 white pill + `box-shadow`, `project-logo--wide` 232px white pill. Card hover `translateY -6px` + `scale 1.05` on logo, `prefers-reduced-motion` safe. Assets handled by Vite (SVGs inlined as `data:image/svg+xml`, PNG hashed `dist/assets/ShelfMaster icon-1024-CX0M8jc0.png 49.68kB`).
 - **Contact — Icon Fix**: `Connect` block icon was duplicate LinkedIn `M16 8...` (`index.html:627` header == LinkedIn button `636`); replaced with `Share-2` network `circle18/5 r3 + 6/12 r3 + 18/19 r3 + lines` (`index.html:633`) — universally “connect/social”, distinct from GitHub/Location/Email.
 - **Contact — Premium Reshape**: Full section elevate: `alt-bg` gradient + dual radial overlay, `contact-form-container` glass `blur20` + `padding-xl` + hover glow, `info-icon` 44×44 circle `bg rgba99,102,241,0.12`, `info-card` hover lift `-3px`, `social-links a` 40×40 circles with glow, `form-note` muted center, `.field-error` red ring, `.hp-field` honeypot off-screen, `toast .error/.success` variants + `btn:disabled`.
 - **Contact — Delivery & Copy**: Switched from fake mock (`js/main.js` toast only) to automatic server delivery to `abusaeedsayem@proton.me` via `https://formsubmit.co/ajax/abusaeedsayem@proton.me` (`js/main.js:154`, `FormData` + `_captcha false` + `_template table`). **Zero `mailto:` fallback** — removed all 3 `window.location.href='mailto:...'` branches (`main.js:244,266,271` → 0). Success toast now exactly `Message has been sent and thanks for using our communication system. ✨` (`main.js:259`). Form note replaced `Secure delivery … 24h` → `Usually I’ll reply within 48 business hours. If it is a weekend, then it might take 72 hours.` (`index.html:606`). Honeypot static, `Send Message →` button disabled `Sending…` state, error toasts no desktop open.
 - **Contact — Email Display**: `asaeedmsayem@gmail.com` → `abusaeedsayem@proton.me` in info card `index.html:617` + footer `678` + `README.md:119`.
 
 ### Added
-- `assets/Smart Affiliate Link Cloaker icon.svg` (2.5k), `assets/ShelfMaster icon-1024.png` (1024×1024, 49k), `assets/VibePress Studio logo.svg` / `logo-dark.svg` (1.0k/1.1k).
+- `assets/VibePress Affiliate Link Cloaker icon.svg` (2.5k), `assets/ShelfMaster icon-1024.png` (1024×1024, 49k), `assets/VibePress Studio logo.svg` / `logo-dark.svg` (1.0k/1.1k).
 - `js/floatingBadges.js` — autonomous drift + wave + draggable hero system.
 
 ### Removed
